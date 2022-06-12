@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "app1",
+      "app2",
+      "app3"
+    ]
+  },
+  "scripts": {
+    "start": "concurrently \"yarn workspace @dynamic-remotes/app1 run start\" \"yarn workspace @dynamic-remotes/app2 run start\" \"yarn workspace @dynamic-remotes/app3 run start\"",
+    "build": "concurrently \"yarn workspace @dynamic-remotes/app1 run build\" \"yarn workspace @dynamic-remotes/app2 run build\" \"yarn workspace @dynamic-remotes/app3 run build\"",
+    "serve": "concurrently \"yarn workspace @dynamic-remotes/app1 run serve\" \"yarn workspace @dynamic-remotes/app2 run serve\" \"yarn workspace @dynamic-remotes/app3 run serve\"",
+    "clean": "concurrently \"yarn workspace @dynamic-remotes/app1 run clean\" \"yarn workspace @dynamic-remotes/app2 run clean\" \"yarn workspace @dynamic-remotes/app3 run clean\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1"
+  }
+}
